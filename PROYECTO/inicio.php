@@ -46,17 +46,29 @@
 
 
         while ($row = $result->fetch_assoc()) {
-          echo "<tr>";
-          echo "<td>" . $row["idProveedores"] . "</td>";
-          echo "<td>" . $row["NomEmpresa"] . "</td>";
-          echo "<td>" . $row["Direccion"] . "</td>";
-          echo "<td>" . $row["Telefono"] . "</td>";
-          echo "<td>" . $row["TotalMercancia"] . "</td>";
-          echo "<td>";
-          echo '<a href="" class="btn btn-warning">Editar</a>';
-          echo '<a href="Eliminar.php?id=<?php echo $result['idProveedores']?>"    class="btn btn-danger">Eliminar</a>';
-          echo "</td>";
-          echo "</tr>";
+          ?>
+          <tr>
+            <td scope="row">
+              <?php echo $row["idProveedores"] ?>
+            </td>
+            <td scope="row">
+              <?php echo $row["NomEmpresa"] ?>
+            </td>
+            <td scope="row">
+              <?php echo $row["Direccion"] ?>
+            </td>
+            <td scope="row">
+              <?php echo $row["Telefono"] ?>
+            </td>
+            <td scope="row">
+              <?php echo $row["TotalMercancia"] ?>
+            </td>
+
+            <th><a href="" class="btn btn-warning">Editar</a><a
+                href="Eliminar.php?idProveedores=<?php echo $row['idProveedores'] ?>" class="btn btn-danger">Eliminar</a>
+            </th>
+          </tr>;
+          <?php
         }
         ?>
         <th>
